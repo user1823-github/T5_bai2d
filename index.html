@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./bootstrap.min.css"> 
+    <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./bai2d.css">
     <script src="./bootstrap.bundle.min.js"></script>
     <script src="./bootstrap.min.js"></script>
-    
+
 
 </head>
 
@@ -89,5 +89,24 @@
 
 
 </body>
+    <script>
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 
 </html>
